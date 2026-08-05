@@ -46,13 +46,21 @@
 
 ## 研究対象
 
-全国のライブ会場を対象とする。
+本研究では、日本全国のZeppライブハウス9会場を研究対象とする。
 
-今後、以下のいずれかに対象を絞る予定である。
+Zeppは全国に展開されるライブハウスブランドであり、同一ブランドの施設であることから、立地条件や周辺環境を比較しやすい。そのため、本研究では研究対象をZeppに限定し、ライブ参加者向けWebマップを作成する。
 
-- Zepp
-- アリーナ
-- ドーム
+### 対象施設
+
+- Zepp Sapporo（北海道）
+- Zepp Haneda（TOKYO）
+- Zepp DiverCity（TOKYO）
+- Zepp Shinjuku（TOKYO）
+- KT Zepp Yokohama（神奈川県）
+- Zepp Nagoya（愛知県）
+- Zepp Osaka Bayside（大阪府）
+- Zepp Namba（OSAKA）
+- Zepp Fukuoka（福岡県）
 
 ## 使用データ（予定）
 
