@@ -10,7 +10,6 @@
 
 ---
 
-# 構想発表 Agenda
 
 ## Abstract
 
