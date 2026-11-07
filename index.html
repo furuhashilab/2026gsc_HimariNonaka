@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zepp 全国9会場マップ</title>
+  <link href="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.css" rel="stylesheet">
+  <script src="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.js"></script>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    #map { width: 100%; height: 100vh; }
+    .title {
+      position: absolute; top: 12px; left: 12px;
+      z-index: 1; background: white; padding: 12px;
+      border-radius: 8px; box-shadow: 0 2px 8px #0002;
+    }
+    .title h1 { font-size: 18px; margin: 0; }
+    .title p { font-size: 12px; margin: 5px 0 0; }
+  </style>
+</head>
+<body>
+  <div class="title">
+    <h1>Zepp 全国9会場マップ</h1>
+    <p>会場のピンをクリックして情報を表示</p>
+  </div>
+  <div id="map"></div>
+
+  <script>
+    const venues = [
+      { name: "Zepp Sapporo", lat: 43.04935, lng: 141.35316 },
+      { name: "Zepp Haneda", lat: 35.54733, lng: 139.75663 },
+      { name: "Zepp DiverCity", lat: 35.6251, lng: 139.7758 },
+      { name: "Zepp Shinjuku", lat: 35.6956, lng: 139.7028 },
+      { name: "KT Zepp Yokohama", lat: 35.4592, lng: 139.6288 },
+      { name: "Zepp Nagoya", lat: 35.1626, lng: 136.8840 },
+      { name: "Zepp Osaka Bayside", lat: 34.6620, lng: 135.4360 },
+      { name: "Zepp Namba", lat: 34.6592, lng: 135.5015 },
+      { name: "Zepp Fukuoka", lat: 33.5934, lng: 130.3632 }
+    ];
+
+    const map = new maplibregl.Map({
+      container: "map",
+      style: "https://tiles.openfreemap.org/styles/liberty",
+      center: [137.5, 37],
+      zoom: 4.3
+    });
+
+    map.addControl(new maplibregl.NavigationControl());
+
+    venues.forEach(venue => {
+      new maplibregl.Marker({ color: "#e85d75" })
+        .setLngLat([venue.lng, venue.lat])
+        .setPopup(
+          new maplibregl.Popup({ offset: 25 })
+            .setText(venue.name)
+        )
+        .addTo(map);
+    });
+  </script>
+</body>
+</html>
